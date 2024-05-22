@@ -122,7 +122,13 @@ public class RestApiController {
 
             String jsonListResponse = restTemplate.getForObject(url, String.class);
             JsonNode root = mapper.readTree(jsonListResponse);
-
+            //The response from the above API is a JSON Array, which we loop through.
+            for (JsonNode rt : root) {
+                //Extract relevant info from the response and use it for what you want, in this case just print to the console.
+                String name = rt.get("name").asText();
+                String country = rt.get("country").asText();
+                System.out.println(name + ": " + country);
+            }
             return root;
         } catch (JsonProcessingException ex) {
             logger.log(Level.SEVERE, "Error processing JSON from /univ", ex);
