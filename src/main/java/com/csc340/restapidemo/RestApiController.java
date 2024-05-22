@@ -80,6 +80,10 @@ public class RestApiController {
         return students.values();
     }
 
+    /**
+     * joke api
+     * @return
+     */
     @GetMapping("/joke")
     public Object getJoke() {
         try {

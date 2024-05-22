@@ -9,6 +9,9 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ */
 public class StudentFileHandler {
     private static final String FILE_PATH = "students.json";
     private static final ObjectMapper mapper = new ObjectMapper();
